@@ -1,0 +1,81 @@
+<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <!-- Links -->
+
+  <a class="brand display-4" style="font-family: 'Liu Jian Mao Cao'" (click)="gotohome()">BLOGGERZONE<hr></a>
+  <div>.</div>
+    <div class="form-group has-search mr-auto d-flex">
+<!--      <span class="fa fa-search form-control-feedback search" (click)="searchvalue()"></span>-->
+      <div><input type="text" class="form-control searchbox" [(ngModel)]="search" placeholder=".."></div>
+      <button class="btn btn-warning ml-2" (click)="searchvalue()">Search</button>
+    </div>
+  <ul class="navbar-nav navbar-light mr-auto">
+    <!--    <li class="nav-item ">-->
+    <!--      <a class="nav-link text text-light" href="#">Add New Product-->
+    <!--      </a>-->
+    <!--    </li>-->
+    <!--    <li class="nav-item ml-4">-->
+    <!--      <a class="nav-link text text-light" href="#">-->
+    <!--        My Profile-->
+    <!--      </a>-->
+    <!--    </li>-->
+<!--    <li class="nav-item text">-->
+<!--      <a class="nav-link ml-1 mr-0">-->
+<!--        <div class="d-flex">-->
+<!--          <div class=""><img src="https://img.icons8.com/color/32/000000/add-database.png"></div>-->
+<!--          <div class="pl-2 pr-2 textsize"><a>AddProduct</a></div>-->
+<!--        </div>-->
+<!--      </a>-->
+<!--    </li>-->
+    <li class="nav-item ">
+      <a class="nav-link  ">
+        <div class="btn btn-outline-success" (click)="gotofollowing()"><a>Following</a></div>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link ">
+        <div class="btn btn-outline-success" (click)="gotomyblog()"><a>MyBlog</a></div>
+      </a>
+    </li>
+
+    <li class="nav-item ">
+      <a class="nav-link ">
+        <div class="btn btn-outline-success" (click)="gotoaddblock()"><a>Add Blog</a></div>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link   ">
+        <div class="d-flex">
+
+          <div class="btn btn-outline-success" (click)="gotoprofile()"><a>Myprofile</a></div>
+        </div>
+      </a>
+    </li>
+<!--    <li class="nav-item text">-->
+<!--      <a class="nav-link  ml-1">-->
+<!--        <div class="d-flex">-->
+<!--          <div class=""><img src="https://img.icons8.com/color/32/000000/shopping-cart.png"></div>-->
+<!--          <div class="textsize"><a>Cart</a></div>-->
+<!--        </div>-->
+<!--      </a>-->
+<!--    </li>-->
+    <li class="btn btn-outline-success" *ngIf="!appservice.checklogin()">
+      <a  class="nav-link text mr-1">
+        <div class="d-flex">
+
+          <div class="btn btn-outline-success" (click)="gotologin()"><a>Login</a></div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item text" *ngIf="appservice.checklogin()">
+      <a class="nav-link text mr-1">
+        <div class="d-flex">
+
+          <div class="btn btn-outline-success" (click)="loginservice.logout()"><a class="">Logout</a></div>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+</nav>
